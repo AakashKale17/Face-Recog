@@ -1,0 +1,17 @@
+last_save = time.time()
+emo_seq = []
+...
+current_time = time.time()
+        if current_time - last_save >= 5:
+            # Save emo_seq to file
+            emo_str = '\n'.join(emo_seq)
+            with open('emoseq.txt', 'w') as f:
+                f.write(emo_str)
+            # if sad >= 5:
+            #     emo_seq.append('depression')
+
+            emo_seq = []
+            last_save = current_time
+
+        # Add current emotion to sequence
+        emo_seq.append(pred)
